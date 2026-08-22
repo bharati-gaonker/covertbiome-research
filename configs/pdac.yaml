@@ -1,0 +1,7 @@
+cancer: PDAC
+modalities:
+  - transcriptomics
+  - genomics
+  - proteomics
+latent_dim: 32
+random_seed: 42

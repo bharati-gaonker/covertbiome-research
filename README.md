@@ -24,21 +24,13 @@ Genomics + Transcriptomics + Proteomics + Pathology + Clinical
 
 ## Initial POC: PDAC
 
-The first public POC is designed to demonstrate:
-
-- reproducible ingestion of public TCGA/CPTAC-derived inputs;
-- modality-aware preprocessing and harmonization;
-- multimodal representation learning;
-- latent patient-state discovery;
-- survival and pathway-oriented evaluation;
-- transparent experiment tracking and reproducibility.
+The first public POC is designed to demonstrate reproducible public-data ingestion, modality-aware preprocessing, multimodal representation learning, latent patient-state discovery, survival/pathway evaluation, and transparent experiment tracking.
 
 ## Repository layout
 
 ```text
 configs/        Reproducible experiment configuration
 src/            Public research code
-notebooks/      Exploratory and demonstration notebooks
 docs/           Scientific and technical documentation
 tests/          Unit and smoke tests
 .github/        CI and repository automation
@@ -47,14 +39,6 @@ tests/          Unit and smoke tests
 ## Scope and IP boundary
 
 This repository intentionally contains public-safe research scaffolding, baselines, evaluation utilities, and reproducibility materials. Proprietary training recipes, causal/mechanistic reasoning systems, unpublished therapeutic targets, private model weights, partner data, and patient-level protected information are not included.
-
-## Data
-
-No raw patient datasets are committed here. Users should obtain applicable public datasets directly from authorized sources and comply with their licenses, access requirements, and data-use terms.
-
-## Status
-
-Early research / proof-of-concept. Interfaces and experiments may change rapidly.
 
 ## Disclaimer
 
