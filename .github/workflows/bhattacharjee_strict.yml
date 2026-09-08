@@ -20,12 +20,12 @@ jobs:
           python-version: '3.12'
       - name: Install analysis dependencies
         run: python -m pip install --upgrade pip numpy pandas scipy scikit-learn requests
-      - name: Execute strict historical run
-        run: python experiments/time_machine/bhattacharjee_strict.py
+      - name: Execute exact original 2001 PMC run
+        run: python experiments/time_machine/bhattacharjee_original_pmc.py
       - name: Upload frozen derived outputs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: bhattacharjee-strict-run-002
+          name: bhattacharjee-original-strict-run-002
           path: strict_run_outputs/
           if-no-files-found: warn
