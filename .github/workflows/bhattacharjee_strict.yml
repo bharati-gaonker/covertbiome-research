@@ -1,31 +1,17 @@
 name: Bhattacharjee 2001 strict Time Machine run
-
 on:
   push:
-    branches:
-      - time-machine-bhattacharjee-strict-run
-  workflow_dispatch:
-
+    branches: [time-machine-bhattacharjee-strict-run]
 permissions:
   contents: read
-
 jobs:
   strict-run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Install analysis dependencies
-        run: python -m pip install --upgrade pip numpy pandas scipy scikit-learn requests
-      - name: Execute exact original 2001 PMC run
-        run: python experiments/time_machine/bhattacharjee_original_pmc.py
-      - name: Upload frozen derived outputs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: bhattacharjee-original-strict-run-002
-          path: strict_run_outputs/
-          if-no-files-found: warn
+        with: {python-version: '3.12'}
+      - run: python -m pip install requests
+      - name: Resolve exact PMC attachment URLs
+        run: python experiments/time_machine/probe_pmc_attachments.py
